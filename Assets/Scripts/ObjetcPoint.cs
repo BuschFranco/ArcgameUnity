@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ObjetcPoint : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip destructionSound;
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -22,6 +22,16 @@ public class ObjetcPoint : MonoBehaviour
         {
             Score.score ++;
             Destroy(this.gameObject);
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Verificamos si el objeto tiene la etiqueta "Objective"
+        if (gameObject.CompareTag("Objetive"))
+        {
+            // Reproducimos el sonido en el momento de la destrucción
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position);
         }
     }
 }

@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-    public Transform player; // Referencia al jugador
 
     void Update()
     {
         // Calculamos la dirección hacia el jugador
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction = Camera.main.transform.position - transform.position;
 
         // Calculamos la rotación hacia el jugador
         Quaternion lookRotation = Quaternion.LookRotation(direction);
