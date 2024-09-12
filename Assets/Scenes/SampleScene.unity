@@ -3294,7 +3294,7 @@ MonoBehaviour:
   - {fileID: 483299115}
   collectiblePrefab: {fileID: 5922553467195845319, guid: 4fab4e82f3dab344ebecb4ce09386bc6,
     type: 3}
-  numberOfItemsToSpawn: 2
+  numberOfItemsToSpawn: 6
 --- !u!1 &1498626519
 GameObject:
   m_ObjectHideFlags: 0
