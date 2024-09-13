@@ -137,8 +137,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
-    // Método para aplicar un temblor suave a la cámara
     private void ApplyCameraShake()
     {
         float shakeX = Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f;
