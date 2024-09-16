@@ -5306,7 +5306,7 @@ MonoBehaviour:
     que conseguir los 6 puntos antes de que llegue. Est\xE1n dispersos en el bosque.
     \xA1Corre, no ten\xE9s mucho tiempo!\",\"parentUIDs\":[4,5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":376,\"yPos\":309},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Cada
     punto est\xE1 protegido por un obst\xE1culo diferente, pero nada que no puedas
-    manejar: juegos de habilidad, peque\xF1os parkour... lo normal, ya sabes.\",\"parentUIDs\":[7,8],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":373,\"yPos\":402},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Nada
+    manejar: juegos de habilidad, peque\xF1os parkour... lo normal, ya sabes.\",\"parentUIDs\":[7,8],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":374,\"yPos\":402},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Nada
     demasiado complicado. Pero ojo, fallar te har\xE1 perder tiempo y una vida, y
     vos mucha vida no ten\xE9s porque est\xE1s todo el d\xEDa en la compu.\",\"parentUIDs\":[10],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":374,\"yPos\":496},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ten\xE9s
     aproximadamente 10 minutos antes de que tu jefe llegue. \xA1Y no queremos que
@@ -8438,6 +8438,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 42476412942204398, guid: 5797f6baa14f28b4ca61d4816e500960,
         type: 3}
+      propertyPath: shakeSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 42476412942204398, guid: 5797f6baa14f28b4ca61d4816e500960,
+        type: 3}
       propertyPath: sensitivity.x
       value: 1.7
       objectReference: {fileID: 0}
@@ -8449,7 +8454,12 @@ PrefabInstance:
     - target: {fileID: 42476412942204398, guid: 5797f6baa14f28b4ca61d4816e500960,
         type: 3}
       propertyPath: shakeAcceleration
-      value: 0.7
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 42476412942204398, guid: 5797f6baa14f28b4ca61d4816e500960,
+        type: 3}
+      propertyPath: cameraShakeIntensity
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2726345948912132673, guid: 5797f6baa14f28b4ca61d4816e500960,
         type: 3}

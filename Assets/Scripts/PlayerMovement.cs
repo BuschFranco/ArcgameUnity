@@ -51,6 +51,9 @@ public class PlayerMovement : MonoBehaviour
             // Reduce progresivamente la intensidad del temblor cuando el jugador deja de moverse
             currentShakeIntensity = Mathf.Lerp(currentShakeIntensity, 0f, Time.deltaTime * shakeAcceleration);
         }
+
+        // Aplicamos el temblor de la cámara de manera suave, incluso cuando el jugador deja de moverse
+        ApplyCameraShake();
     }
 
     private void Movement()
@@ -65,15 +68,10 @@ public class PlayerMovement : MonoBehaviour
             isMoving = true;
             Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
             targetVelocity = direction * speed;
-
-            // Si el jugador se está moviendo, aplicamos temblor a la cámara
-            ApplyCameraShake();
         }
         else
         {
             isMoving = false;
-            // Si no se mueve, la cámara vuelve a su posición original
-            camera.localPosition = cameraInitialPosition;
         }
 
         // Lerp para suavizar la aceleración (interpolación lineal)
@@ -134,16 +132,24 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
-
         }
     }
+
     private void ApplyCameraShake()
     {
-        float shakeX = Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f;
-        float shakeY = Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f;
+        // Si el jugador está moviéndose, aplicamos el temblor a la cámara
+        if (isMoving)
+        {
+            float shakeX = Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f;
+            float shakeY = Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f;
 
-        Vector3 shakeOffset = new Vector3(shakeX, shakeY, 0) * currentShakeIntensity;
-
-        camera.localPosition = cameraInitialPosition + shakeOffset;
+            Vector3 shakeOffset = new Vector3(shakeX, shakeY, 0) * currentShakeIntensity;
+            camera.localPosition = Vector3.Lerp(camera.localPosition, cameraInitialPosition + shakeOffset, Time.deltaTime * shakeAcceleration);
+        }
+        else
+        {
+            // Si el jugador no se está moviendo, suavemente llevamos la cámara de vuelta a su posición inicial
+            camera.localPosition = Vector3.Lerp(camera.localPosition, cameraInitialPosition, Time.deltaTime * shakeAcceleration);
+        }
     }
 }
