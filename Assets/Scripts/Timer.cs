@@ -38,10 +38,10 @@ public class Timer : MonoBehaviour
             elapsedTime = 0f; // Reinicia el tiempo
             // Aquí podrías reiniciar la escena si es necesario:
            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-           Score.score = 0;
+           Score.objetive = 0;
         }
 
-        if(Score.score == 6)
+        if(Score.objetive == 6)
         {
             endGame.gameObject.SetActive(true);
         }

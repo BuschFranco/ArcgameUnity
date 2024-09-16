@@ -7,6 +7,7 @@ public class GameStartParameters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Score.objetive = 0;
         Score.score = 0;
         EndGame.Contador = true;
     }

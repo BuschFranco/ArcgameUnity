@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Ground
   - Objetive
-  - Coin
+  - Score
   layers:
   - Default
   - TransparentFX

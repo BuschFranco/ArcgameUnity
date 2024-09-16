@@ -6,22 +6,31 @@ using Unity.VisualScripting;
 
 public class Score : MonoBehaviour
 {
+    public static int objetive;
     public static int score;
-    public TextMeshPro RecordUI;
+    public TextMeshPro timeRecordUI;
+    public TextMeshPro scoreRecordUI;
+    [SerializeField] private TextMeshProUGUI objetiveText; 
     [SerializeField] private TextMeshProUGUI scoreText; 
     [SerializeField] private TextMeshProUGUI ObjetiveAlert; 
     private float recordTime;
+    private float recordScore;
 
     void Start(){
         recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
-        RecordUI.text = "Record(s): " + recordTime.ToString("F2");
+        timeRecordUI.text = "Record(s): " + recordTime.ToString("F2");
+
+        recordScore = PlayerPrefs.GetInt("RecordScore", 0);
+        scoreRecordUI.text = "Record(Score): " + recordScore.ToString();
+
     }
 
    void Update(){
-    scoreText.text = "Objetivos: " + score + "/6";
+    objetiveText.text = "Objetivos: " + objetive + "/6";
+    scoreText.text = "Score: " + score;
 
 
-    if(score == 6 && EndGame.Contador ==! false){ //Utilizo el Contador del EndGame porque necesito un bool para esta función y este me sirve
+    if(objetive == 6 && EndGame.Contador ==! false){ //Utilizo el Contador del EndGame porque necesito un bool para esta función y este me sirve
         ObjetiveAlert.text = "Regresa a la casita";
     }
     
