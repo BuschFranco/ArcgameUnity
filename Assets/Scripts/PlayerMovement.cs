@@ -23,9 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 currentVelocity = Vector3.zero;
 
     // Ajustes para el Raycast
-    public Transform groundCheck; // Un punto en el jugador desde donde lanzar el raycast
-    public float groundDistance = 0.4f; // Distancia desde el jugador para verificar el suelo
-    public LayerMask groundMask; // Capa del suelo para que el Raycast solo detecte suelo
+    public Transform groundCheck; 
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
 
     void Start()
     {
@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Uso de Raycast para detección de suelo
+    // Uso de Raycast para detectar el piso
     private void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

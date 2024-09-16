@@ -16,7 +16,6 @@ public class ClickHandler : MonoBehaviour
 
     void Update()
     {
-        // Verificar si la conversación está activa y si el jugador ha salido del área
         if (isConversationActive && AreaColliderChild.inArea == false)
         {
             EndConversation();
@@ -36,15 +35,12 @@ public class ClickHandler : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             cl.enabled = false;
 
-            // Activar el flag de conversación activa
             isConversationActive = true;
 
             // Suscribirnos al evento de cuando la conversación termina
             ConversationManager.OnConversationEnded += OnConversationEnd;
         }
     }
-
-    // Este método será llamado cuando termine la conversación
     private void OnConversationEnd()
     {
         EndConversation();

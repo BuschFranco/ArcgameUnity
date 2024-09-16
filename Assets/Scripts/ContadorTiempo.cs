@@ -9,12 +9,6 @@ public class ContadorTiempo : MonoBehaviour
     private float tiempoTranscurrido = 0f;
     public static float recordTime;
 
-    void Start()
-    {
-        // Cargar el tiempo récord guardado al inicio del juego (Infinity si no hay récord)
-        recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
-    }
-
     void Update()
     {
         if (EndGame.Contador == true)
@@ -33,6 +27,9 @@ public class ContadorTiempo : MonoBehaviour
     // Método para verificar si el tiempo actual es mejor que el récord
     void CheckRecordTime()
     {
+        //Llamamos al record actual y lo comparamos
+        recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
+
         if (tiempoTranscurrido < recordTime)
         {
             // Guardamos el nuevo récord en PlayerPrefs

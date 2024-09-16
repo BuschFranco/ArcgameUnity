@@ -9,7 +9,6 @@ public class ObjetcPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Cargar el récord guardado al inicio del juego
         int recordScore = PlayerPrefs.GetInt("RecordScore", 0);
         Debug.Log("Record Score al iniciar: " + recordScore);
     }
@@ -30,16 +29,13 @@ public class ObjetcPoint : MonoBehaviour
 
     void OnDestroy()
     {
-        // Verificamos si el objeto tiene la etiqueta "Objective"
         if (gameObject.CompareTag("Objetive"))
         {
             Score.objetive++;
-            // Reproducimos el sonido en el momento de la destrucción
             AudioSource.PlayClipAtPoint(destructionSound, transform.position);
         }
         else if (gameObject.CompareTag("Score"))
         {
-            // Añadimos puntos al score actual
             Score.score += 100;
             AudioSource.PlayClipAtPoint(destructionSound, transform.position);
 
@@ -48,7 +44,6 @@ public class ObjetcPoint : MonoBehaviour
         }
     }
 
-    // Método para verificar y guardar si es un nuevo récord
     void CheckRecordScore()
     {
         // Obtenemos el récord actual almacenado en PlayerPrefs
@@ -58,7 +53,7 @@ public class ObjetcPoint : MonoBehaviour
         if (Score.score > recordScore)
         {
             PlayerPrefs.SetInt("RecordScore", Score.score);
-            PlayerPrefs.Save(); // Guardamos permanentemente
+            PlayerPrefs.Save();
             Debug.Log("¡Nuevo récord establecido!: " + Score.score);
         }
         else

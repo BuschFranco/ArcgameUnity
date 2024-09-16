@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     [SerializeField] public GameObject endGame;
-    [SerializeField]public RectTransform timerBar;   // Referencia al RectTransform de la barra de progreso
-    [SerializeField]public RectTransform timerPoint; // Referencia al RectTransform del punto
-    public float timeLimit = 60f;       // Tiempo total para completar el movimiento
-
+    [SerializeField]public RectTransform timerBar; 
+    [SerializeField]public RectTransform timerPoint;
+    public float timeLimit = 60f;
     private float elapsedTime = 0f;
 
     public float startPoint;
@@ -35,9 +34,8 @@ public class Timer : MonoBehaviour
         // Si se ha completado el tiempo, reinicia la escena o resetea el temporizador
         if (elapsedTime >= timeLimit)
         {
-            elapsedTime = 0f; // Reinicia el tiempo
-            // Aquí podrías reiniciar la escena si es necesario:
-           SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            elapsedTime = 0f; 
+           SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Pasar al siguiente nivel (actualmente reinicia)
            Score.objetive = 0;
         }
 
