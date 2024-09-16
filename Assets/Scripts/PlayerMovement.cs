@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Necesario para usar UI
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,11 +28,30 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    // Variables para correr
+    public float runSpeedMultiplier = 1.5f; // Multiplicador de velocidad al correr
+    public float maxRunTime = 2f;           // Tiempo máximo de corrida (en segundos)
+    public float runCooldownTime = 3f;      // Tiempo de enfriamiento para recargar estamina
+    private float currentRunTime;           // Tiempo actual de corrida
+    private bool isRunning = false;         // Estado de corrida
+    private bool canRun = true;             // Si el jugador puede correr
+
+    // Variable para la barra de estamina (Slider en el Canvas)
+    public Slider staminaSlider;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         cameraInitialPosition = camera.localPosition;
+        currentRunTime = maxRunTime; // Inicia con el tiempo completo de sprint
+
+        // Configurar el Slider para que tenga el rango de 0 a maxRunTime
+        if (staminaSlider != null)
+        {
+            staminaSlider.maxValue = maxRunTime;
+            staminaSlider.value = maxRunTime; // Comienza con la estamina llena
+        }
     }
 
     void Update()
@@ -55,6 +75,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         ApplyCameraShake();
+        HandleRunning();
+
+        // Actualiza la barra de estamina con el tiempo actual de corrida
+        if (staminaSlider != null)
+        {
+            staminaSlider.value = currentRunTime; // El Slider refleja la estamina disponible
+        }
     }
 
     private void Movement()
@@ -68,7 +95,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = true;
             Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
-            targetVelocity = direction * speed;
+
+            // Ajustar la velocidad dependiendo si está corriendo
+            float currentSpeed = speed;
+            if (isRunning && canRun)
+            {
+                currentSpeed *= runSpeedMultiplier; // Aumenta la velocidad mientras corre
+            }
+
+            targetVelocity = direction * currentSpeed;
         }
         else
         {
@@ -133,9 +168,45 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Uso de Raycast para detectar el piso
     private void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
     }
+
+    private void HandleRunning()
+{
+    // Comprueba si el jugador está presionando Shift para correr y si puede correr
+    if (Input.GetKey(KeyCode.LeftShift) && currentRunTime > 0 && canRun)
+    {
+        isRunning = true;
+        currentRunTime -= Time.deltaTime; // Reduce el tiempo de corrida
+
+        // Si el tiempo de corrida llega a 0, el personaje no puede correr hasta que se recargue
+        if (currentRunTime <= 0)
+        {
+            canRun = false;
+            currentRunTime = 0; // Asegura que no caiga por debajo de 0
+        }
+    }
+    else
+    {
+        isRunning = false;
+
+        // Si no se está corriendo, recarga progresivamente el tiempo de corrida
+        if (currentRunTime < maxRunTime)
+        {
+            currentRunTime += Time.deltaTime / runCooldownTime * maxRunTime; // Recarga de manera progresiva
+        }
+
+        // Si la estamina se ha recargado completamente, permite correr de nuevo
+        if (currentRunTime >= maxRunTime)
+        {
+            canRun = true;
+        }
+
+        // Asegura que el tiempo de corrida no exceda el máximo
+        currentRunTime = Mathf.Clamp(currentRunTime, 0, maxRunTime);
+    }
+}
+
 }
