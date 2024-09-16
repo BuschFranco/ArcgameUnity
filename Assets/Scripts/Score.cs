@@ -31,6 +31,7 @@ public class Score : MonoBehaviour
     }
 
 
+        //Actualiza los records en pantalla
         recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
         timeRecordUI.text = "Record(s): " + recordTime.ToString("F2");
 
