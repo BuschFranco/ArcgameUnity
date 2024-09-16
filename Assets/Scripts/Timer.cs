@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField]public RectTransform timerBar; 
     [SerializeField]public RectTransform timerPoint;
     public float timeLimit = 60f;
-    private float elapsedTime = 0f;
+    public static float elapsedTime = 0f;
 
     public float startPoint;
 

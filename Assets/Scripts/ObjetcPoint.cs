@@ -41,6 +41,11 @@ public class ObjetcPoint : MonoBehaviour
 
             // Verificar si el puntaje actual es un nuevo récord
             CheckRecordScore();
+        } else if (gameObject.CompareTag("Bonus"))
+        {
+            Timer.elapsedTime -= 10f;
+            ContadorTiempo.tiempoTranscurrido -= 10f;
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position);
         }
     }
 

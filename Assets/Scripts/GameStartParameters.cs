@@ -9,6 +9,7 @@ public class GameStartParameters : MonoBehaviour
     {
         Score.objetive = 0;
         Score.score = 0;
+        ContadorTiempo.tiempoTranscurrido = 0;
         EndGame.Contador = true;
     }
 

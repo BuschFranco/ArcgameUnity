@@ -17,11 +17,7 @@ public class Score : MonoBehaviour
     private float recordScore;
 
     void Start(){
-        recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
-        timeRecordUI.text = "Record(s): " + recordTime.ToString("F2");
-
-        recordScore = PlayerPrefs.GetInt("RecordScore", 0);
-        scoreRecordUI.text = "Record(Score): " + recordScore.ToString();
+        
 
     }
 
@@ -33,7 +29,13 @@ public class Score : MonoBehaviour
     if(objetive == 6 && EndGame.Contador ==! false){ //Utilizo el Contador del EndGame porque necesito un bool para esta función y este me sirve
         ObjetiveAlert.text = "Regresa a la casita";
     }
-    
+
+
+        recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
+        timeRecordUI.text = "Record(s): " + recordTime.ToString("F2");
+
+        recordScore = PlayerPrefs.GetInt("RecordScore", 0);
+        scoreRecordUI.text = "Record(Score): " + recordScore.ToString();
    }
 
 
