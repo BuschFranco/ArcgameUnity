@@ -1,20 +1,49 @@
 using UnityEngine;
-using UnityEngine.UI; // Necesario si deseas mostrar el contador en la UI
+using UnityEngine.UI;
 using TMPro;
+
 public class ContadorTiempo : MonoBehaviour
 {
-    public TextMeshProUGUI contadorTiempoUI; // Texto en UI para mostrar el contador (opcional)
-
+    public TextMeshProUGUI contadorTiempoUI;
+    
     private float tiempoTranscurrido = 0f;
+    public static float recordTime;
+
+    void Start()
+    {
+        // Cargar el tiempo récord guardado al inicio del juego (Infinity si no hay récord)
+        recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
+    }
 
     void Update()
     {
-        if(EndGame.Contador == true){
+        if (EndGame.Contador == true)
+        {
             // Actualizamos el tiempo transcurrido
-             tiempoTranscurrido += Time.deltaTime;
-
-             contadorTiempoUI.text = tiempoTranscurrido.ToString("F2");
+            tiempoTranscurrido += Time.deltaTime;
+            contadorTiempoUI.text = tiempoTranscurrido.ToString("F2");
+        }
+        else if (EndGame.Contador == false) // Suponiendo que Contador se vuelve falso al finalizar el juego
+        {
+            // Llamar a la función para verificar si es un nuevo récord
+            CheckRecordTime();
         }
     }
-        
+
+    // Método para verificar si el tiempo actual es mejor que el récord
+    void CheckRecordTime()
+    {
+        if (tiempoTranscurrido < recordTime)
+        {
+            // Guardamos el nuevo récord en PlayerPrefs
+            recordTime = tiempoTranscurrido;
+            PlayerPrefs.SetFloat("RecordTime", recordTime);
+            PlayerPrefs.Save(); // Asegura que el tiempo se guarde permanentemente
+            Debug.Log("¡Nuevo récord establecido!: " + recordTime.ToString("F2"));
+        }
+        else
+        {
+            Debug.Log("Tiempo final: " + tiempoTranscurrido.ToString("F2") + ". Récord actual: " + recordTime.ToString("F2"));
+        }
+    }
 }

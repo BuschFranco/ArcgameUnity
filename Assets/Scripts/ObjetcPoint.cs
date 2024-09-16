@@ -20,7 +20,6 @@ public class ObjetcPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Score.score ++;
             Destroy(this.gameObject);
         }
     }
@@ -30,7 +29,11 @@ public class ObjetcPoint : MonoBehaviour
         // Verificamos si el objeto tiene la etiqueta "Objective"
         if (gameObject.CompareTag("Objetive"))
         {
+            Score.score ++;
             // Reproducimos el sonido en el momento de la destrucción
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position);
+        } else if (gameObject.CompareTag("Coin"))
+        {
             AudioSource.PlayClipAtPoint(destructionSound, transform.position);
         }
     }

@@ -7,8 +7,15 @@ using Unity.VisualScripting;
 public class Score : MonoBehaviour
 {
     public static int score;
+    public TextMeshPro RecordUI;
     [SerializeField] private TextMeshProUGUI scoreText; 
     [SerializeField] private TextMeshProUGUI ObjetiveAlert; 
+    private float recordTime;
+
+    void Start(){
+        recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
+        RecordUI.text = "Record(s): " + recordTime.ToString("F2");
+    }
 
    void Update(){
     scoreText.text = "Objetivos: " + score + "/6";
