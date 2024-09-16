@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 1769591568185792873}
   - component: {fileID: 4243856371999871638}
   m_Layer: 0
-  m_Name: Coin
-  m_TagString: Coin
+  m_Name: Score
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
