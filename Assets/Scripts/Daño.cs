@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Daño : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform teleportTarget; //Un pequeño tp que hace al jugador cuando recibe daño
     void Start()
     {
         
@@ -19,6 +19,8 @@ public class Daño : MonoBehaviour
     void OnTriggerEnter (Collider other){
         if (other.CompareTag("Player")){
             GameStartParameters.life --;
+
+            other.transform.position = teleportTarget.position;
         }
     }
 }
