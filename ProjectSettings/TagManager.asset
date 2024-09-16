@@ -7,11 +7,12 @@ TagManager:
   - Ground
   - Objetive
   - Score
+  - Coin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
