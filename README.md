@@ -32,4 +32,4 @@ El juego se desarrolla en un entorno de bosque. Cada nivel tiene una disposició
 1. **Clona** el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/BuschFranco/ArcgameUnity.git
