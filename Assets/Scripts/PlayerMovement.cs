@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Necesario para usar UI
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     // Variables para correr
+
+    public Volume volume;
+    private LensDistortion lensDistortion;
     public float runSpeedMultiplier = 1.5f; // Multiplicador de velocidad al correr
     public float maxRunTime = 2f;           // Tiempo máximo de corrida (en segundos)
     public float runCooldownTime = 3f;      // Tiempo de enfriamiento para recargar estamina
@@ -52,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
             staminaSlider.maxValue = maxRunTime;
             staminaSlider.value = maxRunTime; // Comienza con la estamina llena
         }
+        
+        volume.profile.TryGet<LensDistortion>(out lensDistortion);
     }
 
     void Update()
@@ -178,6 +183,7 @@ public class PlayerMovement : MonoBehaviour
     // Comprueba si el jugador está presionando Shift para correr y si puede correr
     if (Input.GetKey(KeyCode.LeftShift) && currentRunTime > 0 && canRun)
     {
+        lensDistortion.intensity.value = Mathf.Lerp(lensDistortion.intensity.value, -0.5f, Time.deltaTime * 4f); 
         isRunning = true;
         currentRunTime -= Time.deltaTime; // Reduce el tiempo de corrida
 
@@ -190,6 +196,7 @@ public class PlayerMovement : MonoBehaviour
     }
     else
     {
+        lensDistortion.intensity.value = Mathf.Lerp(lensDistortion.intensity.value, 0, Time.deltaTime * 4f); 
         isRunning = false;
 
         // Si no se está corriendo, recarga progresivamente el tiempo de corrida
