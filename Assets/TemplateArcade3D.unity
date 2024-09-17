@@ -4940,6 +4940,21 @@ MonoBehaviour:
   - {fileID: 1040014829}
   - {fileID: 2109315089}
   - {fileID: 967937116}
+  - {fileID: 1060106769}
+  - {fileID: 1633632644}
+  - {fileID: 1687459713}
+  - {fileID: 2071955741}
+  - {fileID: 1709668671}
+  - {fileID: 1898875907}
+  - {fileID: 1566066054}
+  - {fileID: 819321444}
+  - {fileID: 1378406063}
+  - {fileID: 1906026550}
+  - {fileID: 241987969}
+  - {fileID: 2102651295}
+  - {fileID: 341240018}
+  - {fileID: 931725354}
+  - {fileID: 1314366319}
   collectiblePrefab: {fileID: 5922553467195845319, guid: d6d790aeace7bf9428ac57feb8a97655,
     type: 3}
   numberOfItemsToSpawn: 10
@@ -6812,6 +6827,21 @@ MonoBehaviour:
   - {fileID: 260018732}
   - {fileID: 1674551062}
   - {fileID: 483299115}
+  - {fileID: 1620803669}
+  - {fileID: 1685567066}
+  - {fileID: 2067510237}
+  - {fileID: 2145416822}
+  - {fileID: 1455049299}
+  - {fileID: 1809748409}
+  - {fileID: 754255170}
+  - {fileID: 2124082471}
+  - {fileID: 841084686}
+  - {fileID: 1107340680}
+  - {fileID: 57293548}
+  - {fileID: 350946206}
+  - {fileID: 265286621}
+  - {fileID: 294257701}
+  - {fileID: 1459109314}
   collectiblePrefab: {fileID: 5922553467195845319, guid: 4fab4e82f3dab344ebecb4ce09386bc6,
     type: 3}
   numberOfItemsToSpawn: 6
