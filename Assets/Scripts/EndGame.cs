@@ -6,7 +6,7 @@ using TMPro;
 
 public class EndGame : MonoBehaviour
 {
-    public static bool Contador;
+    public static bool Contador = false;
     public Transform teleportTarget;
     [SerializeField] GameObject nextDayPoint;
     [SerializeField] private TextMeshProUGUI ObjetiveAlert;

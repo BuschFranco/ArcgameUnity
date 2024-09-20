@@ -9,6 +9,7 @@ public class GameStartParameters : MonoBehaviour
     
     public static float life = 3;
     public TextMeshProUGUI lifeUI;
+    public static bool _dead;
 
     void Start()
     {
@@ -17,17 +18,19 @@ public class GameStartParameters : MonoBehaviour
         ContadorTiempo.tiempoTranscurrido = 0;
         Timer.elapsedTime = 0;
         life = 3;
-        EndGame.Contador = true;
+        _dead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        lifeUI.text = "Vidas: " + life;
+        lifeUI.text = life.ToString();
 
         if(life <= 0){
             life = 0;
+            EndGame.Contador = false;
+            _dead = true;
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Muere y se reinicia el nivel (Agregar posteriormente al final de alguna animación o efecto de muerte)
         }

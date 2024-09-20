@@ -17,7 +17,7 @@ public class ContadorTiempo : MonoBehaviour
             tiempoTranscurrido += Time.deltaTime;
             contadorTiempoUI.text = tiempoTranscurrido.ToString("F2");
         }
-        else if (EndGame.Contador == false) // Contador se vuelve falso al finalizar el juego
+        else if (EndGame.Contador == false && GameStartParameters._dead == false) // Contador se vuelve falso al finalizar el juego
         {
             // Llamar a la función para verificar si es un nuevo récord
             CheckRecordTime();

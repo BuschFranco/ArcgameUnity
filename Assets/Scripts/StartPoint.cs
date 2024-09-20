@@ -24,6 +24,7 @@ public class StartPoint : MonoBehaviour
                 timeBar.SetActive(true); // Activa la barra de tiempo cuando el Player entra en el BoxCollider
                 objetiveAlertUI.gameObject.SetActive(true);
                 contadorTiempoUI.gameObject.SetActive(true);
+                EndGame.Contador = true;
             }
         }
     }

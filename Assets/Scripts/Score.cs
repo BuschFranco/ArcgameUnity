@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
 
    void Update(){
     objetiveText.text = "Objetivos: " + objetive + "/6";
-    scoreText.text = "Score: " + score;
+    scoreText.text = score.ToString();
 
 
     if(objetive == 6 && EndGame.Contador ==! false){ //Utilizo el Contador del EndGame porque necesito un bool para esta función y este me sirve
