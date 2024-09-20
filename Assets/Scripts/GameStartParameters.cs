@@ -10,6 +10,7 @@ public class GameStartParameters : MonoBehaviour
     public static float life = 3;
     public TextMeshProUGUI lifeUI;
     public static bool _dead;
+    private string _emote;
 
     void Start()
     {
@@ -25,7 +26,16 @@ public class GameStartParameters : MonoBehaviour
     void Update()
     {
 
-        lifeUI.text = life.ToString();
+        switch (life){
+            case 3: _emote = " UwU";
+            break;
+            case 2: _emote = " -_-";
+            break;
+            case 1: _emote = " D;"; 
+            break;
+        }
+
+        lifeUI.text = life.ToString() + _emote;
 
         if(life <= 0){
             life = 0;

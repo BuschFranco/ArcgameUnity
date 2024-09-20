@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     }
 
    void Update(){
-    objetiveText.text = "Objetivos: " + objetive + "/6";
+    objetiveText.text = objetive + "/6";
     scoreText.text = score.ToString();
 
 
