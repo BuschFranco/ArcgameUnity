@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.348
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.113492884, g: 0.05787759, b: 0.075822964, a: 0.348}
+  m_IndirectSpecularColor: {r: 0.11222707, g: 0.055745065, b: 0.07283816, a: 0.348}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7082,8 +7082,8 @@ Transform:
   m_GameObject: {fileID: 1455695933}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.65, y: 3.06, z: 1.88}
-  m_LocalScale: {x: 0.15, y: 3.5, z: 6.02}
+  m_LocalPosition: {x: -1.65, y: 3.06, z: 1.53}
+  m_LocalScale: {x: 0.15, y: 3.5, z: 6.73}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121762366}
@@ -7588,7 +7588,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 34d6bf22783b5ea4da3f98869955bebc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0c6d69e5192434642ab9df093efbf237, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.004
   m_Pitch: 1
@@ -8698,7 +8698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 177.2, y: -362.1}
+  m_AnchoredPosition: {x: 177.2, y: -364.8}
   m_SizeDelta: {x: 113.8, y: 26.52}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1763740025
@@ -11276,6 +11276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShakeIntensity
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 54367995649879102, guid: 5797f6baa14f28b4ca61d4816e500960,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2726345948912132673, guid: 5797f6baa14f28b4ca61d4816e500960,
         type: 3}
