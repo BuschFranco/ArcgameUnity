@@ -34,13 +34,11 @@ public class ObjetcPoint : MonoBehaviour
             Score.objetive++;
             AudioSource.PlayClipAtPoint(destructionSound, transform.position);
         }
-        else if (gameObject.CompareTag("Score"))
+        else if (gameObject.CompareTag("Score") && EndGame.Contador == true)
         {
             Score.score += 100;
             AudioSource.PlayClipAtPoint(destructionSound, transform.position);
 
-            // Verificar si el puntaje actual es un nuevo récord
-            CheckRecordScore();
         } else if (gameObject.CompareTag("Bonus"))
         {
             Timer.elapsedTime -= 10f;
@@ -49,7 +47,7 @@ public class ObjetcPoint : MonoBehaviour
         }
     }
 
-    void CheckRecordScore()
+    public static void CheckRecordScore()
     {
         // Obtenemos el récord actual almacenado en PlayerPrefs
         int recordScore = PlayerPrefs.GetInt("RecordScore", 0);

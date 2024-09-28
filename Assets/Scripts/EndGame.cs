@@ -18,6 +18,9 @@ public class EndGame : MonoBehaviour
             Contador = false;
             
             nextDayPoint.gameObject.SetActive(true);
+
+            // Verificar si el puntaje actual es un nuevo récord
+            ObjetcPoint.CheckRecordScore();
         }
     }
 

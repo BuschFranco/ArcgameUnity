@@ -6,7 +6,7 @@ public class ContadorTiempo : MonoBehaviour
 {
     public TextMeshProUGUI contadorTiempoUI;
     
-    public static float tiempoTranscurrido = 0f;
+    public static float tiempoTranscurrido;
     public static float recordTime;
 
     void Update()
@@ -17,7 +17,7 @@ public class ContadorTiempo : MonoBehaviour
             tiempoTranscurrido += Time.deltaTime;
             contadorTiempoUI.text = tiempoTranscurrido.ToString("F2");
         }
-        else if (EndGame.Contador == false && GameStartParameters._dead == false) // Contador se vuelve falso al finalizar el juego
+        else // Contador se vuelve falso al finalizar el juego
         {
             // Llamar a la función para verificar si es un nuevo récord
             CheckRecordTime();
@@ -30,7 +30,7 @@ public class ContadorTiempo : MonoBehaviour
         //Llamamos al record actual y lo comparamos
         recordTime = PlayerPrefs.GetFloat("RecordTime", Mathf.Infinity);
 
-        if (tiempoTranscurrido < recordTime)
+        if (tiempoTranscurrido < recordTime && tiempoTranscurrido > 0)
         {
             // Guardamos el nuevo récord en PlayerPrefs
             recordTime = tiempoTranscurrido;
