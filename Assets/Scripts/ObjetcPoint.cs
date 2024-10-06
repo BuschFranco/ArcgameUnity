@@ -29,22 +29,22 @@ public class ObjetcPoint : MonoBehaviour
 
     void OnDestroy()
     {
-        if (gameObject.CompareTag("Objetive"))
-{
-    Score.objetive++;
-    AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
-}
-else if (gameObject.CompareTag("Score") && EndGame.Contador == true)
-{
-    Score.score += 100;
-    AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
-}
-else if (gameObject.CompareTag("Bonus"))
-{
-    Timer.elapsedTime -= 25f;
-    ContadorTiempo.tiempoTranscurrido -= 25f;
-    AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
-}
+         if (gameObject.CompareTag("Objetive"))
+        {
+            Score.objetive++;
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
+        }
+        else if (gameObject.CompareTag("Score") && EndGame.Contador == true)
+        {
+            Score.score += 100;
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
+        }
+        else if (gameObject.CompareTag("Bonus"))
+        {
+            Timer.elapsedTime -= 25f;
+            ContadorTiempo.tiempoTranscurrido -= 25f;
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
+        }
     }
 
     public static void CheckRecordScore()

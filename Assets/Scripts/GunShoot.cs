@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
  
 public class GunShoot : MonoBehaviour
@@ -11,6 +12,10 @@ public class GunShoot : MonoBehaviour
     public float recoilSpeed = 20f;       // Velocidad de la rotación del retroceso
     private Quaternion originalRotation;  // Rotación original de la pistola
     private bool isRecoiling = false;     // Indica si la pistola está en retroceso
+    private float cantidadBalas = 7;
+
+    public TextMeshProUGUI cantidadBalasHUD;
+
 
     void Start()
     {
@@ -21,27 +26,35 @@ public class GunShoot : MonoBehaviour
     void Update()
     {
         // Detectamos si el jugador hace clic
-        if (Input.GetMouseButtonDown(0) && !isRecoiling)
+        if (Input.GetMouseButtonDown(0) && !isRecoiling && cantidadBalas > 0)
         {
             // Disparar la bala
             ShootBullet();
 
             // Iniciar el retroceso
             StartCoroutine(Recoil());
+
+            cantidadBalasHUD.text = "Munición: " + cantidadBalas;
         }
     }
 
+    
+    
     // Función que dispara la bala
     void ShootBullet()
 {
     // Instanciar la bala
     GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, originalRotation);
 
+    cantidadBalas--;
+
     // Agregar fuerza a la bala
     Rigidbody rb = bullet.GetComponent<Rigidbody>();
     
     // Aquí multiplicamos la dirección forward por la velocidad de la bala usando AddForce
     rb.AddForce(bulletSpawnPoint.forward * bulletSpeed, ForceMode.Impulse);
+
+    Destroy(bullet, 4f);
 }
 
 

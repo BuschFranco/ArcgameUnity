@@ -8,6 +8,8 @@ TagManager:
   - Objetive
   - Score
   - Bonus
+  - Enemy
+  - EnemyZone
   layers:
   - Default
   - TransparentFX
