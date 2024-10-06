@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public Volume volume;
     private LensDistortion lensDistortion;
     public float runSpeedMultiplier = 1.5f; // Multiplicador de velocidad al correr
-    public float maxRunTime = 2f;           // Tiempo máximo de corrida (en segundos)
+    public float maxRunTime = 4f;           // Tiempo máximo de corrida (en segundos)
     public float runCooldownTime = 3f;      // Tiempo de enfriamiento para recargar estamina
     private float currentRunTime;           // Tiempo actual de corrida
     private bool isRunning = false;         // Estado de corrida

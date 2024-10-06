@@ -41,8 +41,8 @@ else if (gameObject.CompareTag("Score") && EndGame.Contador == true)
 }
 else if (gameObject.CompareTag("Bonus"))
 {
-    Timer.elapsedTime -= 10f;
-    ContadorTiempo.tiempoTranscurrido -= 10f;
+    Timer.elapsedTime -= 25f;
+    ContadorTiempo.tiempoTranscurrido -= 25f;
     AudioSource.PlayClipAtPoint(destructionSound, transform.position, 0.1f); // Volumen a 0.3
 }
     }
