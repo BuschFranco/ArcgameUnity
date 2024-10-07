@@ -10,6 +10,7 @@ TagManager:
   - Bonus
   - Enemy
   - EnemyZone
+  - EventsHUD
   layers:
   - Default
   - TransparentFX
