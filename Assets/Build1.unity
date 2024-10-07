@@ -1649,8 +1649,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6.45
-  m_fontSizeBase: 6.45
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2407,6 +2407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1657781038}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &235990561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3425,6 +3427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 141699587}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &406741420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4024,6 +4028,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 213041831}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &486460636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9313,6 +9319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 341695186}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &1407707779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9743,6 +9751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1200445572}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &1481219705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10123,6 +10133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 255012123}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &1556323013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11298,6 +11310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 479730388}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!1 &1685567066
 GameObject:
   m_ObjectHideFlags: 0
@@ -11655,6 +11669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 2047759290}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!1 &1763740023
 GameObject:
   m_ObjectHideFlags: 0
@@ -12106,6 +12122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1114829014}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!1 &1780931942
 GameObject:
   m_ObjectHideFlags: 0
@@ -13726,6 +13744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1123981338}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &2056012619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14057,6 +14077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 388757477}
+  eventHUD: {fileID: 0}
+  eventHUDtext: {fileID: 0}
 --- !u!65 &2096361348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14276,6 +14298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422100754302299761, guid: 000a1382478cff34692fd00597f65eb4,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyKing
       objectReference: {fileID: 0}
     - target: {fileID: 3424715872357643334, guid: 000a1382478cff34692fd00597f65eb4,
         type: 3}
@@ -14708,7 +14735,7 @@ PrefabInstance:
     - target: {fileID: 4646791891700724572, guid: bacb02afbc70ccb409f9f8953838ab26,
         type: 3}
       propertyPath: timeLimit
-      value: 240
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 4646791891700724572, guid: bacb02afbc70ccb409f9f8953838ab26,
         type: 3}
@@ -14834,7 +14861,7 @@ PrefabInstance:
     - target: {fileID: 8037253301263381168, guid: bacb02afbc70ccb409f9f8953838ab26,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

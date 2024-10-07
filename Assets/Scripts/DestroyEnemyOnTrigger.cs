@@ -11,5 +11,10 @@ public class DestroyEnemyOnTrigger : MonoBehaviour
             // Destruir el objeto enemigo
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("EnemyKing"))
+        {
+            // Destruir el objeto enemigo
+            Destroy(other.gameObject);
+        }
     }
 }

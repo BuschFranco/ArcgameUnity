@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - EnemyZone
   - EventsHUD
+  - EnemyKing
   layers:
   - Default
   - TransparentFX

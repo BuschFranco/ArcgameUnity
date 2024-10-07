@@ -60,6 +60,11 @@ public class ObjetcPoint : MonoBehaviour
             eventHUDtext.text = "Mataste a un Fantasma (+50P)\n" + eventHUDtext.text;
             Score.score += 50;
         }
+        else if(gameObject.CompareTag("EnemyKing"))
+        {
+            eventHUDtext.text = "Mataste al Rey de los Fantasmas (+200P)\n" + eventHUDtext.text;
+            Score.score += 200;
+        }
     }
 
     public static void CheckRecordScore()
